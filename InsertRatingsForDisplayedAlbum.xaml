@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="408,1267" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="390,1074" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
       <x:String>System.Activities</x:String>
@@ -47,7 +47,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="InsertRatingsForDisplayedAlbum (Sequence)" sap:VirtualizedContainerService.HintSize="418,1062" sap2010:WorkflowViewState.IdRef="Sequence_2">
+  <Sequence DisplayName="InsertRatingsForDisplayedAlbum (Sequence)" sap:VirtualizedContainerService.HintSize="242,869" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="T:\rym.csv" Name="exportFilePath" />
       <Variable x:TypeArguments="sd:DataTable" Name="metadataDataTable" />
@@ -62,7 +62,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence sap2010:Annotation.AnnotationText="Export music files metadata to a csv-file (rating;track;title)" DisplayName="Mp3Tag-Actions (Sequence)" sap:VirtualizedContainerService.HintSize="376,108" sap2010:WorkflowViewState.IdRef="Sequence_34">
+    <Sequence sap2010:Annotation.AnnotationText="Export music files metadata to a csv-file (rating;track;title)" DisplayName="Mp3Tag-Actions (Sequence)" sap:VirtualizedContainerService.HintSize="200,108" sap2010:WorkflowViewState.IdRef="Sequence_34">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -238,7 +238,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:WindowScope>
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Read metadata from csv in DataTable; calculate album rating in two versions (5*- and 100-based); prepare comment for using in RYM-Lists" DisplayName="Prepare Data For RYM-Import (Sequence)" sap:VirtualizedContainerService.HintSize="376,168" sap2010:WorkflowViewState.IdRef="Sequence_35">
+    <Sequence sap2010:Annotation.AnnotationText="Read metadata from csv in DataTable; calculate album rating in two versions (5*- and 100-based); prepare comment for using in RYM-Lists" DisplayName="Prepare Data For RYM-Import (Sequence)" sap:VirtualizedContainerService.HintSize="200,168" sap2010:WorkflowViewState.IdRef="Sequence_35">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -292,7 +292,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
     </Sequence>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Insert Track &amp; Album-Ratings to the RYM-Albumpage and adds the album to the user's collection.&#xD;&#xA;&#xD;&#xA;The RYM-Albumpage for the album to rate has to be already opened in Internet Explorer in a logged-in-state" BrowserType="IE" DisplayName="Insert Ratings in RYM Album Page (BrowserScope)" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="e419c18721bf6bcf16797f77b95f6199" Selector="&lt;html title='*Rate Your Music' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Insert Track &amp; Album-Ratings to the RYM-Albumpage and adds the album to the user's collection.&#xD;&#xA;&#xD;&#xA;The RYM-Albumpage for the album to rate has to be already opened in Internet Explorer in a logged-in-state" BrowserType="IE" DisplayName="Insert Ratings in RYM Album Page (BrowserScope)" sap:VirtualizedContainerService.HintSize="200,198" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="e419c18721bf6bcf16797f77b95f6199" Selector="&lt;html title='*Rate Your Music' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -462,19 +462,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BrowserScope>
-    <Sequence sap:VirtualizedContainerService.HintSize="376,153" sap2010:WorkflowViewState.IdRef="Sequence_1">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="x:String" Name="winFolder" />
-        <Variable x:TypeArguments="x:String" Name="resultValue" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:GetEnvironmentFolder DisplayName="Get environment folder" FolderPath="[winFolder]" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="GetEnvironmentFolder_1" SpecialFolder="Windows" />
-    </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Append 5*-tracks to the comment for using in RYM-Lists; copy the comment in the Clipboard and shows a dialog with instructions for manually inserting the album and comment to RYM-Lists" DisplayName="Prepare Insert of Album to lists (Sequence)" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_37">
+    <Sequence sap2010:Annotation.AnnotationText="Append 5*-tracks to the comment for using in RYM-Lists; copy the comment in the Clipboard and shows a dialog with instructions for manually inserting the album and comment to RYM-Lists" DisplayName="Prepare Insert of Album to lists (Sequence)" sap:VirtualizedContainerService.HintSize="200,183" sap2010:WorkflowViewState.IdRef="Sequence_37">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
