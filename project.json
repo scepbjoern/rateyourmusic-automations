@@ -1,7 +1,7 @@
 {
   "name": "rateyourmusic-automations",
   "description": "Various automations with UiPath for the interaction with the rateyourmusic-Webapplication (Auto add best of playlists, Auto calculate album ratings from track ratings, ...)",
-  "main": "Insert Album & Track Ratings For Album.xaml",
+  "main": "InsertRatingsForDisplayedAlbum.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.8.1-preview]",
     "UiPath.Mail.Activities": "[1.8.1-preview]",
