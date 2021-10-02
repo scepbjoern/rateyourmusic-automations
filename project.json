@@ -1,14 +1,15 @@
 {
   "name": "rateyourmusic-automations",
   "description": "Various automations with UiPath for the interaction with the rateyourmusic-Webapplication (Auto add best of playlists, Auto calculate album ratings from track ratings, ...)",
-  "main": "InsertRatingsForDisplayedAlbum.xaml",
+  "main": "GetRymDataForListOfAlbumsMain.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.8.1-preview]",
-    "UiPath.Mail.Activities": "[1.8.1-preview]",
-    "UiPath.System.Activities": "[20.2.0-preview]",
-    "UiPath.UIAutomation.Activities": "[20.2.0-preview]"
+    "UiPath.Excel.Activities": "[2.11.1-preview]",
+    "UiPath.Mail.Activities": "[1.11.2-preview]",
+    "UiPath.System.Activities": "[21.10.0-preview]",
+    "UiPath.UIAutomation.Activities": "[21.10.0-preview]"
   },
   "webServices": [],
+  "entitiesStores": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.12.0.61",
   "projectVersion": "1.0.0",
@@ -21,7 +22,9 @@
       "Private:*",
       "*password*"
     ],
-    "executionType": "Workflow"
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
   },
   "designOptions": {
     "projectProfile": "Developement",
@@ -30,7 +33,29 @@
       "includeOriginalXaml": false,
       "privateWorkflows": []
     },
-    "fileInfoCollection": []
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": true
   },
-  "expressionLanguage": "VisualBasic"
+  "expressionLanguage": "VisualBasic",
+  "entryPoints": [
+    {
+      "filePath": "InsertRatingsForDisplayedAlbum.xaml",
+      "uniqueId": "a5cd9939-9e64-4efe-b1b6-ebe1418601eb",
+      "input": [],
+      "output": []
+    },
+    {
+      "filePath": "GetRymDataForListOfAlbumsMain.xaml",
+      "uniqueId": "e0fb750b-882b-46c8-a5b5-9739f6bf4504",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": false,
+  "templateProjectData": {},
+  "publishData": {},
+  "targetFramework": "Legacy"
 }

@@ -1,0 +1,347 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ReadDataFromRYM" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="ioDataRow" Type="InOutArgument(sd:DataRow)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1208,4372</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ReadDataFromRYM_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="34">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="" DisplayName="GetRymDataForListOfAlbumsReadData" sap:VirtualizedContainerService.HintSize="796,4307" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Int32" Name="counter" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="754,4184" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" ContinueOnError="True" DisplayName="Use Browser Chrome: Portishead by Portishead (Album, Trip Hop): Reviews, Ratings, Credits, Song list" sap:VirtualizedContainerService.HintSize="716,3957" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Background" OpenMode="Always" ScopeGuid="60cecd72-804d-4e99-89f6-9027949ef930" Version="V1">
+          <uix:NApplicationCard.Body>
+            <ActivityAction x:TypeArguments="x:Object">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="682,3741" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="ui:UiElement" Name="genresParent" />
+                  <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="genresElements" />
+                  <Variable x:TypeArguments="x:Boolean" Name="genresExists" />
+                  <Variable x:TypeArguments="x:Boolean" Name="descriptorsExist" />
+                  <Variable x:TypeArguments="x:Boolean" Name="tagsExists" />
+                  <Variable x:TypeArguments="x:String" Name="albumExtended" />
+                  <Variable x:TypeArguments="x:String" Name="albumOnly" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NGetText WordsInfo="{x:Null}" ContinueOnError="True" DisplayName="Get RYM ID" sap:VirtualizedContainerService.HintSize="640,156" sap2010:WorkflowViewState.IdRef="NGetText_1" ScrapingMethod="Default" Timeout="3000">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="https://rateyourmusic.com/release/album/portishead/portishead/" DesignTimeRectangle="1518, 144, 166, 22" ElementType="InputBox" FriendlyName="'[Album2661]'" FullSelectorArgument="&lt;webctrl parentid='column_container_right' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='column_container_right' tag='INPUT' type='' aaname='' /&gt;" Guid="51a07fd3-cb1e-4794-99bb-515453ac5bb1" InformativeScreenshot="5fc84d1ea47aa3dc02c8d7882883fb40.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Portishead by Portishead (Album, Trip Hop): Reviews, Ratings, Credits, Song list - Rate Your Music' /&gt;" SearchSteps="FuzzySelector" WaitForReadyArgument="Interactive" />
+                  </uix:NGetText.Target>
+                  <uix:NGetText.Text>
+                    <OutArgument x:TypeArguments="x:Object">[ioDataRow("RYM ID")]</OutArgument>
+                  </uix:NGetText.Text>
+                </uix:NGetText>
+                <uix:NGetText WordsInfo="{x:Null}" DisplayName="Get Text 'Artist'" sap:VirtualizedContainerService.HintSize="640,156" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="60cecd72-804d-4e99-89f6-9027949ef930" ScrapingMethod="Default" Version="V1">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="https://rateyourmusic.com/release/album/nala-sinephro/space-1_8/" DesignTimeRectangle="868, 205, 106, 24" ElementType="Text" FriendlyName="'Nala Sinephro'" FullSelectorArgument="&lt;webctrl parentid='column_container_right' tag='A' class='artist' idx='2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='column_container_right' tag='A' class='artist' type='' /&gt;" Guid="b0e6e658-1c47-4a27-ad1c-ce8f06d400ee" ImageBase64="" InformativeScreenshot="4dd794ad1f48082656d7d00dd148394e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Space 1.8 by Nala Sinephro (Album, Avant-Garde Jazz): Reviews, Ratings, Credits, Song list - Rate Your Music' /&gt;" SearchSteps="Selector">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="760, 203, 105, 29" ElementType="Text" FriendlyName="'Artist'" FullSelectorArgument="&lt;webctrl tag='TH' aaname='Artist' class='info_hdr' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TH' aaname='Artist' class='info_hdr' type='' check:text='Artist' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG0AAAAhCAYAAADTYiVBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGlSURBVGhD7ZYhj4QwEEbv16LRaDR29VosGo1FY9euxvbyukzSNLelS3LJzeV7SVM60JLMo0O/gnCHpDlE0hwiaQ6RNIdImkMkzSGS5hBJc4ikOUTSHFItbd/30DRN6LruiHxO27ZhWZZjJK5SLY1kIwxx27Yd0TKfPJsyTVMYhuEYiZxqaSRxHMdwv99jq0HSfocqac/nMwqgRwJlLoUY9x+PR9yNJJ2xNRPAtUmk3N5utxhjPT4EYvncK9L/O1XS8i8fMem/yaQhAbEkH/Kkp2OeNVHM4R22pnZamSppuSSSStINk2ayjJI0pMzzHK9zJK3MqTRKXl4O03IJJi2nJI2edfu+j5JsLZC0MqfSKGEk+6dmO+WKNGNd13jAQSDXIGllTqWRTOSQ7LSRaHYJML4qzaD8mihJK1OUxpefl0bDSiTl8500E84zkEpDCvfsIGIHEyDOf5R4WjbFi6I0EpseOHLYaey4d9JIPnEEQCqNnvnEaLzHDjL0zCGeHoDEi9PyKP4ekuYQSXOIpDlE0hwiaQ6RNIdImkMkzSGS5hBJc0cI3/TTPYnBkURSAAAAAElFTkSuQmCC" SearchSteps="Selector" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NGetText.Target>
+                  <uix:NGetText.Text>
+                    <OutArgument x:TypeArguments="x:Object">[ioDataRow("RYM Artist")]</OutArgument>
+                  </uix:NGetText.Text>
+                </uix:NGetText>
+                <uix:NGetText WordsInfo="{x:Null}" DisplayName="Get Text 'Space 1.8'" sap:VirtualizedContainerService.HintSize="640,156" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="60cecd72-804d-4e99-89f6-9027949ef930" ScrapingMethod="Default" Version="V1">
+                  <uix:NGetText.Target>
+                    <uix:TargetAnchorable BrowserURL="https://rateyourmusic.com/release/album/nala-sinephro/space-1_8/" DesignTimeRectangle="755, 144, 938, 39" ElementType="InputBox" FriendlyName="'Space 1.8'" FullSelectorArgument="&lt;webctrl parentid='column_container_right' tag='DIV' class='album_title' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='column_container_right' tag='DIV' class='album_title' type='' /&gt;" Guid="e4d01c92-7582-408f-9506-14d3e460262f" ImageBase64="" InformativeScreenshot="4b16efebfe50dc1c117f79456fc4c2c4.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Rate Your Music' /&gt;" SearchSteps="Selector" />
+                  </uix:NGetText.Target>
+                  <uix:NGetText.Text>
+                    <OutArgument x:TypeArguments="x:String">[albumExtended]</OutArgument>
+                  </uix:NGetText.Text>
+                </uix:NGetText>
+                <ui:InvokeCode ContinueOnError="{x:Null}" Code="Dim reader = New StringReader(inAlbumExtended)&#xA;outAlbumOnly = reader.ReadLine()" DisplayName="Invoke code" sap:VirtualizedContainerService.HintSize="640,164" sap2010:WorkflowViewState.IdRef="InvokeCode_1">
+                  <ui:InvokeCode.Arguments>
+                    <InArgument x:TypeArguments="x:String" x:Key="inAlbumExtended">[albumExtended]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="outAlbumOnly">[albumOnly]</OutArgument>
+                  </ui:InvokeCode.Arguments>
+                </ui:InvokeCode>
+                <Assign sap:VirtualizedContainerService.HintSize="640,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Object">[ioDataRow("RYM Album")]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Object">[albumOnly]</InArgument>
+                  </Assign.Value>
+                </Assign>
+                <ui:UiElementExists DisplayName="Element Exists" Exists="[genresExists]" sap:VirtualizedContainerService.HintSize="640,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8278fa80-e82f-42fb-93eb-dd4b2dc3d79c" Selector="&lt;webctrl tag='TR' class='release_genres' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <If Condition="[genresExists]" DisplayName="If genres Element exists" sap:VirtualizedContainerService.HintSize="640,1682" sap2010:WorkflowViewState.IdRef="If_2">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="604,1504" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:WaitUiElementAppear ContinueOnError="True" DisplayName="Find Element 'DIV'" FoundElement="[genresParent]" sap:VirtualizedContainerService.HintSize="562,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" WaitActive="False" WaitVisible="False">
+                        <ui:WaitUiElementAppear.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="58af34d7-2eaa-4d7e-bf43-00b20ca3c7f1" InformativeScreenshot="d122a9427d2ba49f6b9a7ae1e32c8df9" Selector="&lt;webctrl tag='TR' class='release_genres' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                        </ui:WaitUiElementAppear.Target>
+                      </ui:WaitUiElementAppear>
+                      <ui:FindChildren Children="[genresElements]" ContinueOnError="True" DisplayName="Find Children" Filter="&lt;webctrl class='genre' /&gt;" sap:VirtualizedContainerService.HintSize="562,68" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_DESCENDANTS">
+                        <ui:FindChildren.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[genresParent]" Id="70465ab4-7a95-4017-a5cc-141e39e363d5" WaitForReady="INTERACTIVE">
+                            <ui:Target.TimeoutMS>
+                              <InArgument x:TypeArguments="x:Int32" />
+                            </ui:Target.TimeoutMS>
+                          </ui:Target>
+                        </ui:FindChildren.Target>
+                      </ui:FindChildren>
+                      <Assign sap:VirtualizedContainerService.HintSize="562,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">1</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each Genre" sap:VirtualizedContainerService.HintSize="562,1055" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[genresElements]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="ui:UiElement">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ui:UiElement" Name="genre" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,930" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If Condition="[counter &lt; 10]" sap:VirtualizedContainerService.HintSize="484,735" sap2010:WorkflowViewState.IdRef="If_1">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,557" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:String" Name="genreUrlPart" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uix:NGetText WordsInfo="{x:Null}" ContinueOnError="True" DisplayName="Get Text" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="NGetText_2" InUiElement="[genre]" ScrapingMethod="Default" Version="V1">
+                                      <uix:NGetText.Text>
+                                        <OutArgument x:TypeArguments="x:Object">[ioDataRow("Genre" + counter.ToString)]</OutArgument>
+                                      </uix:NGetText.Text>
+                                    </uix:NGetText>
+                                    <uix:NGetAttribute Attribute="href" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="334,186" sap2010:WorkflowViewState.IdRef="NGetAttribute_1" InUiElement="[genre]" Version="V1">
+                                      <uix:NGetAttribute.Result>
+                                        <OutArgument x:TypeArguments="x:String">[genreUrlPart]</OutArgument>
+                                      </uix:NGetAttribute.Result>
+                                    </uix:NGetAttribute>
+                                    <Assign sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Object">[ioDataRow("GenreUrl" + counter.ToString)]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Object">["https://rateyourmusic.com" + genreUrlPart]</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                  </Sequence>
+                                </If.Then>
+                              </If>
+                              <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Int32">[counter + 1]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:ForEach>
+                    </Sequence>
+                  </If.Then>
+                </If>
+                <ui:UiElementExists DisplayName="Element Exists" Exists="[descriptorsExist]" sap:VirtualizedContainerService.HintSize="640,68" sap2010:WorkflowViewState.IdRef="UiElementExists_3">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8278fa80-e82f-42fb-93eb-dd4b2dc3d79c" Selector="&lt;webctrl tag='SPAN' class='release_pri_descriptors' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <If Condition="[descriptorsExist]" sap:VirtualizedContainerService.HintSize="640,334" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If.Then>
+                    <uix:NGetText WordsInfo="{x:Null}" ContinueOnError="True" DisplayName="Get Descriptors" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="60cecd72-804d-4e99-89f6-9027949ef930" ScrapingMethod="Default" Timeout="3000" Version="V1">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://rateyourmusic.com/release/album/the-beatles/a-hard-days-night/" DesignTimeRectangle="868, 464, 723, 43" ElementType="Text" FriendlyName="'love, romantic,'" FullSelectorArgument="&lt;webctrl tag='SPAN' class='release_pri_descriptors' /&gt;" Guid="f1ba0dea-982d-4dfc-8931-4e2d7cae2884" InformativeScreenshot="63195ab302c85cdd86145a454f9bac64.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='*Rate Your Music' /&gt;" SearchSteps="Selector" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.Text>
+                        <OutArgument x:TypeArguments="x:Object">[ioDataRow("Descriptors")]</OutArgument>
+                      </uix:NGetText.Text>
+                    </uix:NGetText>
+                  </If.Then>
+                </If>
+                <ui:UiElementExists DisplayName="Element Exists" Exists="[tagsExists]" sap:VirtualizedContainerService.HintSize="484,68" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                  <ui:UiElementExists.Target>
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="8278fa80-e82f-42fb-93eb-dd4b2dc3d79c" Selector="&lt;webctrl isleaf='1' tag='TD' rowName='Common tags             ' /&gt;" TimeoutMS="2000" WaitForReady="INTERACTIVE" />
+                  </ui:UiElementExists.Target>
+                </ui:UiElementExists>
+                <If Condition="[tagsExists]" sap:VirtualizedContainerService.HintSize="484,334" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If.Then>
+                    <uix:NGetText WordsInfo="{x:Null}" ContinueOnError="True" DisplayName="Get Text 'Common tags'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="60cecd72-804d-4e99-89f6-9027949ef930" ScrapingMethod="Default" Timeout="3000" Version="V1">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://rateyourmusic.com/release/album/the-beatles/a-hard-days-night/" DesignTimeRectangle="865, 486, 823, 49" ElementType="Text" FriendlyName="'1964, pop'" FullSelectorArgument="&lt;webctrl isleaf='1' tag='TD' rowName='Common tags             ' /&gt;" FuzzySelectorArgument="&lt;webctrl isleaf='1' tag='TD' rowName='Common tags             ' type='' /&gt;" Guid="f9b31dd8-7ba9-4bb1-b195-5e72cda18789" ImageBase64="" InformativeScreenshot="4c6d77999c3db9fe96dee2c781d58506.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='A Hard Day&amp;apos;s Night by The Beatles (Album, Merseybeat): Reviews, Ratings, Credits, Song list - Rate Your Music' /&gt;" SearchSteps="Selector">
+                          <uix:TargetAnchorable.Anchors>
+                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                              <uix:Target DesignTimeRectangle="760, 486, 105, 49" ElementType="Text" FriendlyName="'Common tags'" FullSelectorArgument="&lt;webctrl aaname='Common tags             ' tag='TH' class='info_hdr' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Common tags             ' tag='TH' class='info_hdr' type='' check:text='Common tags' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG0AAAA1CAYAAABLJWXMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL8SURBVHhe7Zo9c+IwFEX311JTU1PTUtPSUlPTUtPSUtNq52Ryd95owJaIA7zlnhlNsD6C/Y71rFj5U0w6LC0hlpYQS0uIpSXE0hJiaQmxtIRYWkIsLSGWlpBmaYfDoSyXyzKbzb7Ker0u5/P5u9U8kyZpm82mLBaLcjwey/V6LZfLpWy32zKfzy3uBYxK2+12X3KQVcPsO51O30fmWYxKQxhyWpBg0iepNAqlbbValf1+/68Pv5eZSj3H/NTN0dsfYhtjyAaxnXqyBZlDfVqv7Z0YlEYQuDjS4RgESKIIFMFmrNKnhPKTdoJFO0Hm91NIwYx7pD/HsT/fy/nw7BUar5uJvtRlY1AaF9dyUQSJfgQuwh1NAQJEwCKMYaygnX7Q25+bRt8lOJ94Xnyu0zl1urGy0DTTxi7qnlxSEXc73JMQaZEWif3j5wjfz3kA429Jq+venaZnmlLQPYakKfCvlCYpHyONQCAupiXBc4bUo/RYX3xLeoz8RBrpse7fmh7/O2lA4HnoIwlBBIFgccFafWkhQiqlz62FyG9K45yUFfh+vvfWQuRjpAFyCAIXSSEY9cUSQAJHe0xL8NvSAFHU0Y/zuLXk/yhp5n2wtIRYWkIsLSGWlhBLS4ilJcTSEmJpCbG0hIxKq18VmddjaQkZlKaXryoCibz1p07/pRWhXS+O2SGot004Vrv/Fa+f7pnGG3Hq6i0Y7VlxjBCJZHeAY0mjnR0A+jOediSadh5Kj3G7A5ht2t7QvluE8ZLG57jHZfrploYwUh6zR6mRPpLGrKv3p6I0ZhgzjbHMsGx7We9AtzSEaYOTonTYKk2QXqmXPNNOt7T6GKiTqLH0WMPMQ7RpZ1Qaz5+4wtNMiwsJREkagoYWIswqisZrtpl2RqUhg6BTtGJEIrODOqTEmQYSR596yY8sjadwA3jJ38eotClAmleM0zG5NBYmzDRmFCg91n+Am8eZXFpMnxSeVxY2LU9Jj2ZaLC0hlpYQS0uIpSXE0hJiaQmxtHSU8hcAbSZMqNl3VwAAAABJRU5ErkJggg==" SearchSteps="Selector" />
+                            </scg:List>
+                          </uix:TargetAnchorable.Anchors>
+                        </uix:TargetAnchorable>
+                      </uix:NGetText.Target>
+                      <uix:NGetText.Text>
+                        <OutArgument x:TypeArguments="x:Object">[ioDataRow("Common Tags")]</OutArgument>
+                      </uix:NGetText.Text>
+                    </uix:NGetText>
+                  </If.Then>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </uix:NApplicationCard.Body>
+          <uix:NApplicationCard.TargetApp>
+            <uix:TargetApp Area="-8, -8, 1936, 1096" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="a20eb839e4ffea9291f5812dedd084d3.png" Selector="&lt;html app='chrome.exe' title='*Rate Your Music' /&gt;" Url="[ioDataRow(&quot;RYM-Url&quot;).ToString]" />
+          </uix:NApplicationCard.TargetApp>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </uix:NApplicationCard>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="720,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Object">[ioDataRow("RYM ID")]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Object">["Error"]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

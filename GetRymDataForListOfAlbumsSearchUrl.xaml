@@ -1,0 +1,184 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetRYMAlbumURLByGoogleSearch" this:GetRYMAlbumURLByGoogleSearch.inAlbumArtist="Cut Copy" this:GetRYMAlbumURLByGoogleSearch.inAlbumTitle="Free Your Mind" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="outFirstFoundUri" Type="OutArgument(x:String)" />
+    <x:Property Name="inAlbumArtist" Type="InArgument(x:String)" />
+    <x:Property Name="inAlbumTitle" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1208,627</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>GetRYMAlbumURLByGoogleSearch_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="34">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GetRymDataForListOfAlbumsSearchUrl" sap:VirtualizedContainerService.HintSize="480,562" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="searchString" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,470" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap:VirtualizedContainerService.HintSize="304,243" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign DisplayName="Variante mit site" sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[searchString]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[("https://www.google.com/search?q=RYM+" + inAlbumArtist + " " + inAlbumTitle + "+site%3Arateyourmusic.com/release").Replace(" ","+")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: cut copy free your mind site:rateyourmusic.com - Google Suche" sap:VirtualizedContainerService.HintSize="262,51" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Background" IsIncognito="False" OpenMode="Always" ScopeGuid="bd73dbec-73fb-47ab-9e45-a383ac76ccaf" Version="V1">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="683,698" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="atLeastOneResult" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:UiElementExists DisplayName="Element Exists" Exists="[atLeastOneResult]" sap:VirtualizedContainerService.HintSize="641,68" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="4166a842-f00f-4b6f-a04f-39ca55fe9510" Selector="&lt;webctrl parentid='rso' tag='A' idx='1' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If Condition="[atLeastOneResult]" sap:VirtualizedContainerService.HintSize="641,365" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <uix:NGetAttribute Attribute="href" DisplayName="Get Attribute 'Free Your'" sap:VirtualizedContainerService.HintSize="334,206" sap2010:WorkflowViewState.IdRef="NGetAttribute_1" ScopeIdentifier="bd73dbec-73fb-47ab-9e45-a383ac76ccaf" Version="V1">
+                        <uix:NGetAttribute.Result>
+                          <OutArgument x:TypeArguments="x:String">[outFirstFoundUri]</OutArgument>
+                        </uix:NGetAttribute.Result>
+                        <uix:NGetAttribute.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.google.com/search?q=cut+copy+free+your+mind+site%3Arateyourmusic.com&amp;sxsrf=AOaemvJ5nUO3lQl2tmEH7QjoAjqAn6bE-w%3A1633107734774&amp;ei=Fj9XYaO9LtSB9u8PqvOBsAc&amp;ved=0ahUKEwijoKSz2KnzAhXUgP0HHap5AHYQ4dUDCA4&amp;uact=5&amp;oq=cut+copy+free+your+mind+site%3Arateyourmusic.com&amp;gs_lcp=Cgdnd3Mtd2l6EAM6BwgAEEcQsAM6CgguELADEEMQkwI6BwgAELADEEM6BQgAEMsBOgYIABAWEB46CAghEBYQHRAeOgUIIRCgAToECCEQFUoECEEYAFCFCVjeJ2D_KWgBcAJ4AIAB5wGIAd0PkgEGMTYuNi4xmAEAoAEByAEKwAEB&amp;sclient=gws-wiz" DesignTimeRectangle="188, 282, 541, 31" FriendlyName="'Free Your'" FullSelectorArgument="&lt;webctrl parentid='rso' tag='A' idx='1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H3' type='' aaname='Free Your Mind by Cut Copy (Album; Modular; MODVL179 ...' check:text='Free Your Mind by Cut Copy (Album; Modular; MODVL179 ...' /&gt;" Guid="1deec845-eaea-43b4-9ede-e1ee088e69ae" ImageBase64="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" InformativeScreenshot="31d866c4b98e4af3472b085f3d9f2ed2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='cut copy free your mind site:rateyourmusic.com - Google Suche' /&gt;" SearchSteps="Selector" />
+                        </uix:NGetAttribute.Target>
+                      </uix:NGetAttribute>
+                    </If.Then>
+                    <If.Else>
+                      <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:String">[outFirstFoundUri]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">none found</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </If.Else>
+                  </If>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="641,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[outFirstFoundUri]" />
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1936, 1096" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARHSURBVFhHvZddbBRVFMf7YrAq+OSbD6Kgb0qUUh60xq9VtA8k1EJrH1CsGIM+GLUmBA0kFi0WSMCHLcVCTMO2GmjFCiUFpH60sUjMEtIGLaAWama32w92dt2vOf7PndPd3M7sdmobf8k/M/fec8//zJ07s7NFXrEsawlUnclkmqEBaAxKisLS14yYKo6VafMHyR5A4hYoTh5BbAw6iLnLJc3cQZ7bkKQRSttp5w7mpqBdKKRY0noDE+7HxEuSZ94gVxA5l0n6wiDwYUwIyVyN9I0RMls/p4l33qDwi8+R4VtNxjOlFF7no/G3XyfzcBOlR/6UaB3kNHBYITbuyJU7zNOj12ly+/tkPL2KjKdKCgsxkx++p+bMhIvIuxIYuB0BjmWPn+qi0Atl7mYFFCp/nP45e0qy5IAH3w7nnsBAo8RkMY8cck3uVVMN2yWTDrwaxNYGFfGjpu12vnK3pKxIbRVFD+yj+DdHKd51DOf7KfJatRYztbueyLIkmw68UtqtQEeLjCl4s4Wef0xLyBqrWUuJ8/0S5SQx0EfhDeV0c/+n0pMfeDYrc5zfiYb2konufdNhPr7lZbKmpiQiP5YZlbPCwNPEKizm5a+WPoUVG6ZU9yKarLsna86PXGYiIhELB7zX8/I3S1uRuVpPqZ5blMx9d1FozUqKnzwuowsLvP1cwIC0FelffNkCWImjS4lSKRldWODdzwWMSVuR6r1bKyB9sUpG3Hnyo6hnnb2kXwi8DS4gKW1F6vQirYDM79tkxB03o3xq/VGz4gIS/2sBLecSMstmuoCwtBWOWxDcICPuuBnlU3u/YwXULdA34YVntQJGeh+kZGbum/CKkXEUcG7QsQfUJpzxGH6cNT/etZQeDayljuEeGfVOoC/pKGB0Qn81w9vPLyJtm1uxqxTrKab6jkdoZWCdkq/jFQrHxyVidm7GLarYa2rmG/0xGc0B70ouYAkq0Ub39O3Imk+rpvtdmkjM/ipO4iet7khcM2e1Oe+/icMd6vcAjYN2t82NqEFlX73kKKL8683Ue/28RDm5PH6NNnUGYDipmfNqxBKO5W9S5gxWYTk6tB1y4lqvo4BpVXz7FjVeaKH2yyfoy99O0mfBVnq1ZyuVBCrUeOmhOnrik7+yBXw/pH/XwisJz/vE3gadu2Q8yxdDnQ5zrypp3Uhlu392PPsMvHaKbQ7082f4RTskR/cfP+B21LiaFFJpWyUdCHZKlhzw+BWHW8VWB8uyDAH89aoxaoZo6097aFWbvcSzafOZD2gwMiyzcyD33zjcK3buIGCFWxEMb87Dg8doy3c7aE1nLa1ur1RX6uvYRLWnt6m9MBS5ItE6bI4LfEhsCiMrEZS58wa5eNkLX/lMUEQxJjZA//ljAHP5j+tOnLrfcy/IavA/Yn5xeIJjoSbM1R+1+YBki6H1SOyH+iEDSoj4nPv8iKlEDfYbblaKiv4FoeF/NqqvoEMAAAAASUVORK5CYII=" InformativeScreenshot="630567a35b73b4cbf6551d22846d1991.png" Selector="&lt;html app='chrome.exe' title='*Google Suche' /&gt;" Url="[searchString]" />
+            </uix:NApplicationCard.TargetApp>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+          </uix:NApplicationCard>
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[outFirstFoundUri]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>
