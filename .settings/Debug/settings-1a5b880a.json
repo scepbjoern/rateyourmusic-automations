@@ -27,5 +27,7 @@
   "UiPath.UiAutomation.Activities.Browser.UserDataFolderPath": "",
   "UiPath.UiAutomation.Activities.Browser.RuntimeBrowser": "None",
   "UiPath.UiAutomation.Activities.RobotLogging.LogTargetInfo": "False",
-  "UiPath.UiAutomation.Activities.ElementExists.TimeoutMS": "30000"
+  "UiPath.UiAutomation.Activities.ElementExists.TimeoutMS": "30000",
+  "UiPath.UiAutomation.Activities.Browser.NativeWebView2": "False",
+  "UiPath.UiAutomation.Activities.SAP.EnforceHardTimeout": "False"
 }

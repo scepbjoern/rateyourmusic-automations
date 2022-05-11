@@ -1,12 +1,12 @@
 {
   "name": "rateyourmusic-automations",
   "description": "Various automations with UiPath for the interaction with the rateyourmusic-Webapplication (Auto add best of playlists, Auto calculate album ratings from track ratings, ...)",
-  "main": "GetRymDataForListOfAlbumsMain.xaml",
+  "main": "InsertRatingsForDisplayedAlbum.xaml",
   "dependencies": {
-    "UiPath.Excel.Activities": "[2.11.1-preview]",
-    "UiPath.Mail.Activities": "[1.11.2-preview]",
-    "UiPath.System.Activities": "[21.10.0-preview]",
-    "UiPath.UIAutomation.Activities": "[21.10.0-preview]"
+    "UiPath.Excel.Activities": "[2.12.3]",
+    "UiPath.Mail.Activities": "[1.15.1]",
+    "UiPath.System.Activities": "[22.4.1]",
+    "UiPath.UIAutomation.Activities": "[22.4.4]"
   },
   "webServices": [],
   "entitiesStores": [],
@@ -15,7 +15,9 @@
   "projectVersion": "1.0.0",
   "runtimeOptions": {
     "autoDispose": false,
+    "netFrameworkLazyLoading": false,
     "isPausable": true,
+    "isAttended": false,
     "requiresUserInteraction": true,
     "supportsPersistence": false,
     "excludedLoggedData": [
@@ -24,7 +26,8 @@
     ],
     "executionType": "Workflow",
     "readyForPiP": false,
-    "startsInPiP": false
+    "startsInPiP": false,
+    "mustRestoreAllDependencies": false
   },
   "designOptions": {
     "projectProfile": "Developement",
