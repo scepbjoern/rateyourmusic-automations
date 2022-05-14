@@ -5,10 +5,10 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1016,1006</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>937,1006</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="46">
+    <scg:List x:TypeArguments="x:String" Capacity="31">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -43,7 +43,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="34">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="27">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -319,13 +319,16 @@
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
     </Sequence>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Insert Track &amp; Album-Ratings to the RYM-Albumpage and adds the album to the user's collection.&#xA;&#xA;The RYM-Albumpage for the album to rate has to be already opened in Internet Explorer in a logged-in-state" BrowserType="Edge" DisplayName="Insert Ratings in RYM Album Page (BrowserScope)" sap:VirtualizedContainerService.HintSize="636,2883" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="e419c18721bf6bcf16797f77b95f6199" Selector="&lt;html title='*Rate Your Music' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Insert Track &amp; Album-Ratings to the RYM-Albumpage and adds the album to the user's collection.&#xA;&#xA;The RYM-Albumpage for the album to rate has to be already opened in Internet Explorer in a logged-in-state" BrowserType="Edge" DisplayName="Insert Ratings in RYM Album Page (BrowserScope)" sap:VirtualizedContainerService.HintSize="636,2983" sap2010:WorkflowViewState.IdRef="BrowserScope_6" InformativeScreenshot="e419c18721bf6bcf16797f77b95f6199" Selector="&lt;html title='*Rate Your Music' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do (Sequence)" sap:VirtualizedContainerService.HintSize="602,2680" sap2010:WorkflowViewState.IdRef="Sequence_33">
+          <Sequence DisplayName="Do (Sequence)" sap:VirtualizedContainerService.HintSize="602,2780" sap2010:WorkflowViewState.IdRef="Sequence_33">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Int32" Name="xCoordinateAlbum" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -475,9 +478,17 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
+            <Assign DisplayName="Calculate X-Coordinate for mouse click (Assign)" sap:VirtualizedContainerService.HintSize="560,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[xCoordinateAlbum]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(Convert.ToDouble(albumRatingFiveStar)*90/5-5)]</InArgument>
+              </Assign.Value>
+            </Assign>
             <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click correct Album Rating" sap:VirtualizedContainerService.HintSize="560,106" sap2010:WorkflowViewState.IdRef="Click_40" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
               <ui:Click.CursorPosition>
-                <ui:CursorPosition OffsetX="78" OffsetY="9" Position="TopLeft" />
+                <ui:CursorPosition OffsetX="[xCoordinateAlbum]" OffsetY="9" Position="TopLeft" />
               </ui:Click.CursorPosition>
               <ui:Click.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="2c950f06-fe76-4d66-9127-7d5bc65c38e6" InformativeScreenshot="b4c1d72b5b1fdaa3dd008b7d122d0077" Selector="&lt;webctrl id='rating_stars_l_*' tag='DIV' /&gt;" WaitForReady="COMPLETE">
